@@ -1,0 +1,71 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMpJmJmpc8JZ8TIqeMOF0vy",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/tonneyalmaider3-hue/CIR-203-SEPT-DEC-2025/blob/main/Exercise%20Four\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 1. Create product inventory dictionary\n",
+        "inventory = {\n",
+        "    \"Laptop\": 15,\n",
+        "    \"Smartphone\": 8,\n",
+        "    \"Headphones\": 25,\n",
+        "    \"Tablet\": 5,\n",
+        "    \"Monitor\": 12\n",
+        "}\n",
+        "print(\"1. Product Inventory:\", inventory)\n",
+        "\n",
+        "# 2. Add new product and update existing one\n",
+        "inventory[\"Keyboard\"] = 18\n",
+        "inventory[\"Smartphone\"] = 20\n",
+        "print(\"\\n2. Updated inventory:\", inventory)\n",
+        "\n",
+        "# 3. Function to return low stock products\n",
+        "def get_low_stock_products(inventory_dict, threshold=10):\n",
+        "    return {product: quantity for product, quantity in inventory_dict.items()\n",
+        "            if quantity < threshold}\n",
+        "\n",
+        "low_stock = get_low_stock_products(inventory)\n",
+        "print(f\"\\n3. Low stock products (less than 10): {low_stock}\")\n",
+        "\n",
+        "# 4. Delete discontinued product\n",
+        "del inventory[\"Headphones\"]\n",
+        "print(\"\\n4. After deleting Headphones:\", inventory)\n",
+        "\n",
+        "# 5. Loop through items using .items()\n",
+        "print(\"\\n5. Current Inventory:\")\n",
+        "for product, quantity in inventory.items():\n",
+        "    print(f\"   {product}: {quantity} in stock\")"
+      ],
+      "metadata": {
+        "id": "JyipgX7tZiIt"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
