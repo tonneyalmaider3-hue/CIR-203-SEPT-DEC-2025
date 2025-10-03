@@ -1,0 +1,66 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyProdo36eMJd6HqBRNGHcFB",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/tonneyalmaider3-hue/CIR-203-SEPT-DEC-2025/blob/main/Exercise%20Two%20\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 1. Create a list of delivery routes\n",
+        "delivery_routes = [\n",
+        "    \"North Express\", \"South Central\", \"East Coast\", \"West Valley\",\n",
+        "    \"Northwest Passage\", \"Midwest Hub\", \"Northeast Corridor\",\n",
+        "    \"Southern Route\", \"Central Expressway\", \"Pacific Highway\"\n",
+        "]\n",
+        "print(\"1. Delivery Routes:\", delivery_routes)\n",
+        "\n",
+        "# 2. Append new route and remove discontinued one\n",
+        "delivery_routes.append(\"Mountain Pass\")\n",
+        "delivery_routes.remove(\"South Central\")\n",
+        "print(\"\\n2. After adding and removing routes:\", delivery_routes)\n",
+        "\n",
+        "# 3. Sort alphabetically and reverse\n",
+        "delivery_routes.sort()\n",
+        "print(\"\\n3. Sorted alphabetically:\", delivery_routes)\n",
+        "delivery_routes.reverse()\n",
+        "print(\"   Reversed:\", delivery_routes)\n",
+        "\n",
+        "# 4. Count routes starting with \"N\"\n",
+        "routes_with_n = sum(1 for route in delivery_routes if route.startswith('N'))\n",
+        "print(f\"\\n4. Routes starting with 'N': {routes_with_n}\")\n",
+        "\n",
+        "# 5. List comprehension for routes longer than 10 characters\n",
+        "long_routes = [route for route in delivery_routes if len(route) > 10]\n",
+        "print(\"\\n5. Routes longer than 10 characters:\", long_routes)"
+      ],
+      "metadata": {
+        "id": "hunYYcsJYdQJ"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
