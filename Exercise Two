@@ -1,0 +1,108 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOQyzfLL2DSDb8qKJJymYQH",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/tonneyalmaider3-hue/CIR-203-SEPT-DEC-2025/blob/main/Exercise%20Two\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "rprl5ZAdXbA2"
+      },
+      "outputs": [],
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "# 1. Create a 2D array for transaction volumes\n",
+        "transaction_volumes = np.array([\n",
+        "    [150, 200, 180, 220, 190, 210],  # Branch 1\n",
+        "    [170, 160, 195, 185, 175, 205],  # Branch 2\n",
+        "    [140, 180, 220, 160, 200, 190],  # Branch 3\n",
+        "    [210, 190, 170, 230, 180, 220]   # Branch 4\n",
+        "])\n",
+        "\n",
+        "print(\"1. Transaction Volumes Array:\")\n",
+        "print(transaction_volumes)\n",
+        "\n",
+        "# 2. Calculate total transactions per branch\n",
+        "total_per_branch = np.sum(transaction_volumes, axis=1)\n",
+        "print(\"\\n2. Total transactions per branch:\", total_per_branch)\n",
+        "\n",
+        "# 3. Identify branch with highest total transactions\n",
+        "highest_branch = np.argmax(total_per_branch) + 1  # +1 for 1-based indexing\n",
+        "print(f\"3. Branch with highest transactions: Branch {highest_branch}\")\n",
+        "\n",
+        "# 4. Compute average monthly transaction volume\n",
+        "average_monthly = np.mean(transaction_volumes)\n",
+        "print(f\"4. Average monthly transaction volume: {average_monthly:.2f}\")\n",
+        "\n",
+        "# 5. Reshape the array to 3x8\n",
+        "reshaped_array = transaction_volumes.reshape(3, 8)\n",
+        "print(\"\\n5. Reshaped array (3x8):\")\n",
+        "print(reshaped_array)\n",
+        "print(\"Implications: Reshaping to 3x8 changes the structure from 4 branches over 6 months\")\n",
+        "print(\"to 3 branches over 8 months, which doesn't match the original data context.\")\n",
+        "print(\"This could lead to misinterpretation of the data.\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 1. Create a list of delivery routes\n",
+        "delivery_routes = [\n",
+        "    \"North Express\", \"South Central\", \"East Coast\", \"West Valley\",\n",
+        "    \"Northwest Passage\", \"Midwest Hub\", \"Northeast Corridor\",\n",
+        "    \"Southern Route\", \"Central Expressway\", \"Pacific Highway\"\n",
+        "]\n",
+        "print(\"1. Delivery Routes:\", delivery_routes)\n",
+        "\n",
+        "# 2. Append new route and remove discontinued one\n",
+        "delivery_routes.append(\"Mountain Pass\")\n",
+        "delivery_routes.remove(\"South Central\")\n",
+        "print(\"\\n2. After adding and removing routes:\", delivery_routes)\n",
+        "\n",
+        "# 3. Sort alphabetically and reverse\n",
+        "delivery_routes.sort()\n",
+        "print(\"\\n3. Sorted alphabetically:\", delivery_routes)\n",
+        "delivery_routes.reverse()\n",
+        "print(\"   Reversed:\", delivery_routes)\n",
+        "\n",
+        "# 4. Count routes starting with \"N\"\n",
+        "routes_with_n = sum(1 for route in delivery_routes if route.startswith('N'))\n",
+        "print(f\"\\n4. Routes starting with 'N': {routes_with_n}\")\n",
+        "\n",
+        "# 5. List comprehension for routes longer than 10 characters\n",
+        "long_routes = [route for route in delivery_routes if len(route) > 10]\n",
+        "print(\"\\n5. Routes longer than 10 characters:\", long_routes)"
+      ],
+      "metadata": {
+        "id": "XuWjdpY4YEOY"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
